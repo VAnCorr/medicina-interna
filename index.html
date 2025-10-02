@@ -526,6 +526,7 @@
                 border: none;
                 padding-top: 14px;
                 padding-bottom: 14px;
+                color: #0f172a; /* slate-900: darker text for content */
             }
 
             .schedule-table td::before {
@@ -537,7 +538,7 @@
                 white-space: nowrap;
                 text-align: left;
                 font-weight: 600;
-                color: #64748b; /* slate-500 */
+                color: #334155; /* slate-700 for better contrast */
                 letter-spacing: .2px;
             }
             
@@ -671,6 +672,13 @@
             .summary-list li { font-size: 1rem; }
             .site-title h1, .header h1 { text-wrap: balance; }
             .header p { font-size: 1.1em; }
+        }
+
+        /* Dark-mode tweaks for mobile cards to preserve contrast */
+        @media (prefers-color-scheme: dark) and (max-width: 768px) {
+            .schedule-table tr { background: #0b1220; border-color: #1f2937; }
+            .schedule-table td { color: #e5e7eb; }
+            .schedule-table td::before { color: #9ca3af; }
         }
         @media (min-width: 768px) {
             .hero {
