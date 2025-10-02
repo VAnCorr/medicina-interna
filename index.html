@@ -717,6 +717,47 @@
             .hero-title { color: #e5e7eb; }
             .hero-subtitle { color: #cbd5e1; }
         }
+
+        /* Contraste móvil con alta especificidad (WCAG AA ≥ 4.5:1) */
+        @media (max-width: 768px) {
+            /* Fondo blanco y separación visual en las tarjetas */
+            .schedule-table tbody tr {
+                background: #ffffff !important;
+                border: 1px solid #d1d5db;
+            }
+            .schedule-table tbody tr:nth-child(odd) {
+                background: #ffffff !important;
+            }
+
+            /* Contenido de celdas: negro muy oscuro, medio peso, sin transparencia/sombras */
+            .schedule-table tbody tr td {
+                color: #1a1a1a !important; /* negro suave para máxima legibilidad */
+                font-weight: 500;           /* medium */
+                -webkit-font-smoothing: antialiased;
+                opacity: 1 !important;
+                text-shadow: none !important;
+            }
+
+            /* Labels (encabezados por celda en vista móvil): gris muy oscuro y bold */
+            .schedule-table tbody tr td::before {
+                color: #2d3748 !important;   /* gray-800 */
+                font-weight: 700 !important; /* bold para diferenciar del contenido */
+                opacity: 1 !important;
+                text-shadow: none !important;
+            }
+
+            /* Refuerzo para el contenido interno (excluye .tag y summary) */
+            .schedule-table tbody tr td :where(:not(.tag):not(summary)) {
+                color: #1a1a1a !important;
+                opacity: 1 !important;
+                text-shadow: none !important;
+            }
+
+            /* Mantener estilo de botón 'Ver Objetivos' (summary) en blanco sobre verde */
+            .schedule-table tbody tr td .objectives-details summary {
+                color: #ffffff !important;
+            }
+        }
     </style>
 </head>
 <body>
