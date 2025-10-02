@@ -676,6 +676,22 @@
             .header p { font-size: 1.1em; }
         }
 
+        /* Asegurar texto opaco y oscuro en tarjetas (modo claro, móvil) */
+        @media (max-width: 768px) and (prefers-color-scheme: light) {
+            /* El contenido de las celdas debe verse nítido y sin transparencia */
+            .schedule-table td {
+                color: #0b0f19 !important; /* casi negro */
+                text-shadow: none !important;
+                opacity: 1 !important;
+            }
+            /* A todos los elementos dentro de la celda, excepto chips de tag y el botón summary */
+            .schedule-table td :where(:not(.tag):not(summary)) {
+                color: #0b0f19 !important;
+                text-shadow: none !important;
+                opacity: 1 !important;
+            }
+        }
+
         /* Dark-mode tweaks for mobile cards to preserve contrast */
         @media (prefers-color-scheme: dark) and (max-width: 768px) {
             .schedule-table tr { background: #0b1220; border-color: #1f2937; }
