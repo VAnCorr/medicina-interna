@@ -526,7 +526,7 @@
                 border: none;
                 padding-top: 14px;
                 padding-bottom: 14px;
-                color: #0f172a; /* slate-900: darker text for content */
+                color: #111827; /* gray-900: even darker text for content */
             }
 
             .schedule-table td::before {
@@ -538,9 +538,11 @@
                 white-space: nowrap;
                 text-align: left;
                 font-weight: 600;
-                color: #334155; /* slate-700 for better contrast */
+                color: #111827; /* gray-900 for strongest contrast */
                 letter-spacing: .2px;
             }
+            /* En móviles, evita gris cebra para mantener máxima legibilidad */
+            .schedule-table tbody tr:nth-child(odd) { background: #ffffff; }
             
             .summary-grid {
                 grid-template-columns: 1fr;
