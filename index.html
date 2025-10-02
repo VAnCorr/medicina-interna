@@ -50,6 +50,8 @@
             color: var(--carbon);
             margin: 0;
             padding: var(--spacing-sm);
+            /* Base font a bit larger for small screens to improve legibility */
+            font-size: clamp(16px, 0.95rem + 0.25vw, 18px);
             line-height: 1.6;
         }
         .container { max-width: 1100px; margin: auto; overflow: hidden; }
@@ -369,7 +371,7 @@
                     grid-template-columns: 1fr;
                 }
             }
-        }
+        
 
         .summary-list {
             list-style-type: none;
@@ -597,9 +599,9 @@
             isolation: isolate; /* ensure overlays stack correctly */
             /* Background image with dual overlays (dark + brand gradient) */
             background-image:
-                linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                 linear-gradient(135deg, color-mix(in srgb, var(--azul-sereno) 55%, transparent), color-mix(in srgb, var(--verde-menta) 50%, transparent)),
-                url('./Facultad de ciencias medicas.png');
+                url('./assets/facultad-ciencias-medicas.png');
             background-size: cover, cover, cover;
             background-position: center center, center center, center center;
             background-repeat: no-repeat;
@@ -619,7 +621,7 @@
             letter-spacing: 0.3px;
             line-height: var(--leading-tight);
             /* fluid, prominent */
-            font-size: clamp(1.6rem, 3.2vw + 0.8rem, 2.6rem);
+            font-size: clamp(1.7rem, 3.6vw + 0.7rem, 2.8rem);
             text-shadow: 0 2px 10px rgba(0,0,0,0.35);
         }
 
@@ -628,7 +630,7 @@
             opacity: 0.95;
             font-weight: 600;
             line-height: var(--leading-normal);
-            font-size: clamp(1rem, 1.2vw + 0.8rem, 1.3rem);
+            font-size: clamp(1.05rem, 1.4vw + 0.75rem, 1.35rem);
             color: color-mix(in srgb, var(--gris-claro) 85%, #ffffff);
             text-shadow: 0 1px 6px rgba(0,0,0,0.35);
         }
@@ -646,7 +648,21 @@
         @media (max-width: 768px) {
             .hero {
                 min-height: 300px; /* explicit guarantee on small screens */
+                /* Stronger overlay on small screens for better text contrast */
+                background-image:
+                    linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.65)),
+                    linear-gradient(135deg, color-mix(in srgb, var(--azul-sereno) 55%, transparent), color-mix(in srgb, var(--verde-menta) 50%, transparent)),
+                    url('./assets/facultad-ciencias-medicas.png');
             }
+            .hero-title { text-wrap: balance; }
+            .hero-subtitle { text-wrap: balance; }
+            /* Mejor legibilidad en tarjetas del cronograma en móvil */
+            .schedule-table td { font-size: 1rem; line-height: 1.7; }
+            .schedule-table td::before { color: #334155; font-size: 0.95rem; }
+            .tag { font-size: 0.9em; }
+            .summary-list li { font-size: 1rem; }
+            .site-title h1, .header h1 { text-wrap: balance; }
+            .header p { font-size: 1.1em; }
         }
         @media (min-width: 768px) {
             .hero {
@@ -661,7 +677,7 @@
                 background-image:
                     linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
                     linear-gradient(135deg, color-mix(in srgb, var(--azul-sereno) 40%, transparent), color-mix(in srgb, var(--verde-menta) 40%, transparent)),
-                    url('./Facultad de ciencias medicas.png');
+                    url('./assets/facultad-ciencias-medicas.png');
             }
             .hero-title { color: #e5e7eb; }
             .hero-subtitle { color: #cbd5e1; }
@@ -683,8 +699,8 @@
             <div class="header-content">
                 <div class="logo-wrap" aria-hidden="true">
                     <!-- Ruta local para visualización inmediata. Al publicar en GitHub use una ruta relativa (ver README). -->
-                <img class="logo" src="./Facultad de ciencias medicas.png" 
-                    srcset="./Facultad de ciencias medicas.png 120w, ./Facultad de ciencias medicas@2x.png 240w" 
+                <img class="logo" src="./assets/facultad-ciencias-medicas.png" 
+                    srcset="./assets/facultad-ciencias-medicas.png 120w, ./assets/facultad-ciencias-medicas@2x.png 240w" 
                     sizes="(max-width: 767px) 92px, (max-width: 1023px) 120px, 140px"
                     alt="Logo Facultad de Ciencias Médicas" loading="lazy" decoding="async" width="120" height="120" />
                 </div>
