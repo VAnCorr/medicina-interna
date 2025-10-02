@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cronograma de clases para residentes de UCI, octubre 2025 - enero 2026">
+    <meta name="color-scheme" content="light dark">
+    <title>Cronograma de Clases UCI</title>
+    <style>
+        /* === Variables CSS Organizadas === */
+        :root {
+            /* Colores Principales */
+            --azul-sereno: #AEC6CF;
+            --verde-menta: #B4E2D6;
+            --gris-claro: #F5F5F5;
+            --carbon: #36454F;
+            --verde-salvia: #6B7C5C;
+            --rojo-examen: #E57373;
+            
+            /* Tipografía fluida (mobile-first) */
+            --font-size-xs: clamp(0.78rem, 0.74rem + 0.2vw, 0.85rem);
+            --font-size-sm: clamp(0.9rem, 0.86rem + 0.2vw, 1rem);
+            --font-size-md: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+            --font-size-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
+            --font-size-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+            --font-size-2xl: clamp(1.5rem, 1.25rem + 1vw, 1.875rem);
+            --font-size-3xl: clamp(1.875rem, 1.5rem + 1.4vw, 2.25rem);
+            --font-size-4xl: clamp(2.25rem, 1.8rem + 1.8vw, 2.75rem);
+            --leading-tight: 1.2;
+            --leading-normal: 1.5;
+            
+            /* Espaciados */
+            --spacing-xs: 5px;
+            --spacing-sm: 10px;
+            --spacing-md: 20px;
+            --spacing-lg: 25px;
+            --spacing-xl: 30px;
+            
+            /* Efectos */
+            --sombra-suave: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --transicion-rapida: 0.2s ease;
+            --transicion-media: 0.3s ease;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--gris-claro);
+            color: var(--carbon);
+            margin: 0;
+            padding: var(--spacing-sm);
+            line-height: 1.6;
+        }
+        .container { max-width: 1100px; margin: auto; overflow: hidden; }
+
+        /* Enlace para saltar al contenido principal */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+        .skip-link:focus {
+            left: 10px;
+            top: 10px;
+            width: auto;
+            height: auto;
+            padding: 8px 12px;
+            background: #fff;
+            color: #000;
+            border-radius: 6px;
+            box-shadow: var(--sombra-suave);
+            z-index: 9999;
+        }
+
+        /* === Encabezado Superior del Curso === */
+        .site-header {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--sombra-suave);
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-md) var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .site-header .logo-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 110px;
+            height: 110px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--azul-sereno), var(--verde-menta));
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .site-header img.logo {
+            max-width: 96px;
+            max-height: 96px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.15));
+        }
+
+        .site-title {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .site-title h1 { margin: 0; font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--carbon); }
+
+        .site-title small {
+            color: #51626d;
+            opacity: 0.9;
+        }
+
+        /* === Encabezado === */
+        .header {
+            background-color: var(--azul-sereno);
+            color: var(--carbon);
+            padding: var(--spacing-xl) var(--spacing-md);
+            text-align: center;
+            border-radius: 16px;
+            margin-bottom: calc(var(--spacing-xl) + 10px);
+            box-shadow: var(--sombra-suave);
+        }
+
+        /* Contenido del banner superior con logo grande */
+        .header .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-lg);
+        }
+
+        .header .logo-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 140px;
+            height: 140px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--azul-sereno), var(--verde-menta));
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: var(--sombra-suave);
+        }
+
+        .header img.logo {
+            max-width: 120px;
+            max-height: 120px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.15));
+        }
+
+        .header h1 { margin: 0; font-size: clamp(1.4rem, 3.2vw, 2.4rem); }
+
+        .header p {
+            margin: var(--spacing-xs) 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        /* Tarjeta principal del curso al inicio, sin superposición */
+        .site-header {
+            position: relative;
+            z-index: 1;
+            margin-top: 0;
+        }
+        
+        /* === Tabla del Calendario === */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: var(--spacing-xl);
+            background: white;
+            box-shadow: var(--sombra-suave);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .schedule-table th, 
+        .schedule-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .schedule-table thead {
+            background-color: var(--verde-menta);
+            color: var(--carbon);
+            font-size: 1.1em;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+        
+        /* Zebra striping para escaneabilidad */
+        .schedule-table tbody tr:nth-child(odd) {
+            background: #fafafa;
+        }
+
+        .schedule-table tbody tr {
+            transition: background-color var(--transicion-media), transform var(--transicion-rapida), box-shadow var(--transicion-rapida);
+        }
+
+        .schedule-table tbody tr:hover {
+            background-color: #f0f6f8;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+        
+        .schedule-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Accesibilidad: permitir foco en filas */
+        .schedule-table tbody tr[tabindex="0"]:focus-visible {
+            outline: 3px solid var(--color-focus, #3b82f6);
+            outline-offset: -3px;
+            background-color: #e9f2ff;
+        }
+
+        /* === Fila de Examen === */
+        .exam-row {
+            background-color: #fff3e0 !important;
+            font-weight: bold;
+        }
+
+        .exam-row:hover {
+            background-color: #ffe0b2 !important;
+        }
+
+        .exam-row td {
+            color: var(--carbon);
+        }
+
+        /* === Tags de Módulos === */
+        .tag {
+            padding: 4px var(--spacing-sm);
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: white;
+            display: inline-block;
+        }
+
+        .tag-fccs { background-color: var(--verde-salvia); }
+
+        .tag-pocus { background-color: var(--verde-menta); color: var(--carbon); }
+        
+        .tag-avanzado { background-color: var(--azul-sereno); color: var(--carbon); }
+
+        .tag-examen { background-color: var(--rojo-examen); color: white; }
+
+        /* === Objetivos con Details/Summary === */
+        .objectives-details {
+            margin-top: var(--spacing-xs);
+        }
+
+        .objectives-details summary {
+            background-color: var(--verde-salvia);
+            color: white;
+            border: none;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-left: var(--spacing-sm);
+            display: inline-block;
+            transition: background-color var(--transicion-rapida);
+            list-style: none;
+        }
+
+        .objectives-details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .objectives-details summary:hover {
+            background-color: var(--azul-sereno);
+        }
+
+        .objectives-details[open] summary {
+            background-color: var(--carbon);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .objectives {
+            padding: var(--spacing-sm);
+            background-color: var(--gris-claro);
+            border: 1px solid var(--verde-menta);
+            border-radius: 5px;
+            margin-left: var(--spacing-sm);
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .objectives ul {
+            margin: var(--spacing-xs) 0;
+            padding-left: var(--spacing-md);
+        }
+
+        .objectives li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* === Tarjeta de Examen === */
+        .exam-card {
+            background: linear-gradient(135deg, var(--verde-salvia), var(--azul-sereno));
+            color: white;
+            padding: var(--spacing-lg);
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--sombra-suave);
+        }
+
+        .exam-card h2 {
+            margin: 0 0 var(--spacing-sm);
+            font-size: 1.8em;
+        }
+
+        .exam-card p {
+            margin: 0;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* === Sección de Resumen === */
+        .summary-section {
+            background-color: white;
+            padding: var(--spacing-lg);
+            border-radius: 12px;
+            box-shadow: var(--sombra-suave);
+        }
+
+        .summary-section h2 {
+            margin-top: 0;
+            color: var(--carbon);
+            border-bottom: 2px solid var(--verde-menta);
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .summary-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-lg);
+                align-items: start;
+            }
+
+            @container (max-width: 700px) {
+                .summary-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+
+        .summary-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .summary-list li {
+            background-color: var(--gris-claro);
+            padding: var(--spacing-sm);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            transition: transform var(--transicion-rapida), 
+                        box-shadow var(--transicion-rapida);
+            cursor: pointer;
+            position: relative;
+            min-height: 44px; /* touch-friendly */
+            display: flex;
+            align-items: center;
+        }
+        .summary-list li:focus-visible { outline: 3px solid #3b82f6; outline-offset: 2px; }
+        
+        .summary-list li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        /* Soporte de modo oscuro */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --gris-claro: #0f172a;
+                --carbon: #e5e7eb;
+                --azul-sereno: #3b5561;
+                --verde-menta: #335c5a;
+            }
+            body { background: var(--gris-claro); }
+            .site-header, .summary-section, .schedule-table { background: #0b1220; color: var(--carbon); }
+            .schedule-table thead { background: #1e293b; color: var(--carbon); }
+            .summary-list li { background: #111827; }
+            .exam-card { background: linear-gradient(135deg, #2e3b2a, #3b5561); }
+        }
+
+        /* Enfatizar foco accesible en elementos interactivos */
+        :focus-visible { outline: 3px solid #3b82f6; outline-offset: 2px; }
+
+        /* Respeto a usuarios con reducción de movimiento */
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; }
+        }
+
+        /* Performance en el contenido principal */
+        main { content-visibility: auto; contain-intrinsic-size: 800px; }
+
+        .summary-list li::after {
+            content: '👁️';
+            position: absolute;
+            right: var(--spacing-sm);
+            opacity: 0;
+            transition: opacity var(--transicion-rapida);
+        }
+
+        .summary-list li:hover::after {
+            opacity: 0.6;
+        }
+        
+        /* === Resaltado === */
+        .highlight {
+            background-color: #fff3cd !important;
+            font-weight: bold;
+            box-shadow: 0 0 0 3px #ffc107 !important;
+        }
+
+        /* === Responsividad === */
+        @media (max-width: 768px) {
+            body {
+                padding: var(--spacing-sm);
+            }
+
+            .header h1 { 
+                font-size: 1.8em; 
+            }
+            
+            .header p { 
+                font-size: 1.05em; 
+            }
+            
+            /* Evitar superposición en pantallas pequeñas */
+            .site-header {
+                margin-top: 0;
+                margin-bottom: var(--spacing-md);
+            }
+
+            .header .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header .logo-wrap {
+                width: 108px;
+                height: 108px;
+                border-radius: 14px;
+            }
+
+            .header img.logo {
+                max-width: 92px;
+                max-height: 92px;
+            }
+
+            .site-header .logo-wrap {
+                width: 88px;
+                height: 88px;
+            }
+
+            .site-header img.logo {
+                max-width: 76px;
+                max-height: 76px;
+            }
+
+            .site-title h1 {
+                font-size: 1.4rem;
+            }
+            
+            .schedule-table thead {
+                display: none;
+            }
+
+            .schedule-table, 
+            .schedule-table tbody, 
+            .schedule-table tr, 
+            .schedule-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .schedule-table tr {
+                margin-bottom: 12px;
+                border: 1px solid #e5e7eb;
+                border-radius: 12px;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+                background: #fff;
+                overflow: hidden;
+            }
+            
+            .schedule-table td {
+                text-align: right;
+                padding-left: 52%;
+                position: relative;
+                border: none;
+                padding-top: 14px;
+                padding-bottom: 14px;
+            }
+
+            .schedule-table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 15px;
+                width: calc(50% - 24px);
+                padding-right: var(--spacing-sm);
+                white-space: nowrap;
+                text-align: left;
+                font-weight: 600;
+                color: #64748b; /* slate-500 */
+                letter-spacing: .2px;
+            }
+            
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .objectives-details summary,
+            .objectives {
+                margin-left: 0;
+            }
+        }
+
+        /* Respeto reduce-motion para micro-animaciones */
+        @media (prefers-reduced-motion: reduce) {
+            .schedule-table tbody tr {
+                transition: none !important;
+            }
+            .schedule-table tbody tr:hover {
+                transform: none !important;
+                box-shadow: none !important;
+            }
+        }
+
+        /* === Utilidades === */
+        .scroll-margin {
+            scroll-margin-top: var(--spacing-md);
+        }
+
+        /* Mobile-first: por defecto ya es formato "card" para filas */
+        /* Escalado a tablet/escritorio */
+        @media (min-width: 768px) {
+            .container { max-width: 1000px; }
+            .header .header-content { flex-direction: row; gap: var(--spacing-lg); }
+            .site-header { margin-bottom: var(--spacing-xl); }
+
+            .schedule-table { display: table; }
+            .schedule-table thead { display: table-header-group; }
+            .schedule-table tbody { display: table-row-group; }
+            .schedule-table tr { display: table-row; border: none; box-shadow: none; border-radius: 0; margin: 0; }
+            .schedule-table td, .schedule-table th { display: table-cell; padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+            .schedule-table td::before { content: none; }
+        }
+
+        @media (min-width: 1024px) {
+            .container { max-width: 1200px; }
+            .header h1 { font-size: var(--font-size-4xl); }
+        }
+
+        @media (min-width: 1440px) {
+            .container { max-width: 1320px; }
+        }
+
+        /* === HERO BANNER (Full-Width) === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: clamp(300px, 45vh, 520px); /* >=300px mobile, ~>=400px desktop */
+            display: grid;
+            place-items: center; /* center content both axes */
+            padding: var(--spacing-lg) var(--spacing-md);
+            color: #fff; /* high contrast over dark overlay */
+            text-align: center;
+            isolation: isolate; /* ensure overlays stack correctly */
+            /* Background image with dual overlays (dark + brand gradient) */
+            background-image:
+                linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                linear-gradient(135deg, color-mix(in srgb, var(--azul-sereno) 55%, transparent), color-mix(in srgb, var(--verde-menta) 50%, transparent)),
+                url('./Facultad de ciencias medicas.png');
+            background-size: cover, cover, cover;
+            background-position: center center, center center, center center;
+            background-repeat: no-repeat;
+            box-shadow: var(--sombra-suave);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1; /* above overlays */
+            max-width: 1000px;
+            padding-inline: var(--spacing-md);
+        }
+
+        .hero-title {
+            margin: 0 0 var(--spacing-sm);
+            font-weight: 800;
+            letter-spacing: 0.3px;
+            line-height: var(--leading-tight);
+            /* fluid, prominent */
+            font-size: clamp(1.6rem, 3.2vw + 0.8rem, 2.6rem);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+        }
+
+        .hero-subtitle {
+            margin: 0;
+            opacity: 0.95;
+            font-weight: 600;
+            line-height: var(--leading-normal);
+            font-size: clamp(1rem, 1.2vw + 0.8rem, 1.3rem);
+            color: color-mix(in srgb, var(--gris-claro) 85%, #ffffff);
+            text-shadow: 0 1px 6px rgba(0,0,0,0.35);
+        }
+
+        .hero::after {
+            /* subtle vignette to improve contrast at edges */
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(80% 60% at 50% 40%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.12) 60%, rgba(0,0,0,0.28) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 300px; /* explicit guarantee on small screens */
+            }
+        }
+        @media (min-width: 768px) {
+            .hero {
+                min-height: 400px; /* explicit guarantee on desktop/tablet */
+            }
+        }
+
+        /* Dark mode tuning for hero */
+        @media (prefers-color-scheme: dark) {
+            .hero {
+                color: var(--carbon);
+                background-image:
+                    linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                    linear-gradient(135deg, color-mix(in srgb, var(--azul-sereno) 40%, transparent), color-mix(in srgb, var(--verde-menta) 40%, transparent)),
+                    url('./Facultad de ciencias medicas.png');
+            }
+            .hero-title { color: #e5e7eb; }
+            .hero-subtitle { color: #cbd5e1; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Saltar al contenido principal</a>
+    <!-- HERO BANNER: primer elemento visual de la página -->
+    <section class="hero" role="img" aria-label="Banner principal del cronograma con imagen de la Facultad de Ciencias Médicas">
+        <div class="hero-content">
+            <h1 class="hero-title"><span role="img" aria-label="Calendario">🗓️</span> Cronograma de Clases de UCI</h1>
+            <p class="hero-subtitle">Rotación para Residentes (Oct 2025 - Ene 2026)</p>
+        </div>
+    </section>
+    <div class="container">
+        <!-- Banda superior con foto y título del cronograma -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-wrap" aria-hidden="true">
+                    <!-- Ruta local para visualización inmediata. Al publicar en GitHub use una ruta relativa (ver README). -->
+                <img class="logo" src="./Facultad de ciencias medicas.png" 
+                    srcset="./Facultad de ciencias medicas.png 120w, ./Facultad de ciencias medicas@2x.png 240w" 
+                    sizes="(max-width: 767px) 92px, (max-width: 1023px) 120px, 140px"
+                    alt="Logo Facultad de Ciencias Médicas" loading="lazy" decoding="async" width="120" height="120" />
+                </div>
+                <div>
+                    <h1><span role="img" aria-label="Calendario">🗓️</span> Cronograma de Clases de UCI</h1>
+                    <p>Rotación para Residentes (Oct 2025 - Ene 2026)</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Tarjeta con título del curso sin foto -->
+        <header class="site-header" role="banner">
+            <div class="site-title">
+                <h1>Curso de Cuidados Intensivos de Adultos para Residentes de Medicina Interna</h1>
+                <small>Cronograma y asignaciones del curso</small>
+            </div>
+        </header>
+
+        <main id="main">
+            <table class="schedule-table" role="table" aria-label="Cronograma de clases">
+                <caption style="text-align:left; padding:10px 15px; color:#51626d">Cronograma oficial de sesiones teóricas y evaluaciones para la rotación en UCI.</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Día</th>
+                        <th scope="col">Residente Expositor</th>
+                        <th scope="col">Tutor</th>
+                        <th scope="col">Tema de la Clase</th>
+                        <th scope="col">Módulo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-resident="Kevin Alexander Aguilar Romero" class="scroll-margin" tabindex="0">
+                        <td data-label="Fecha">20/10/2025</td>
+                        <td data-label="Día">Lunes</td>
+                        <td data-label="Residente">Kevin Alexander Aguilar Romero</td>
+                        <td data-label="Tutor">Dr. Altamirano</td>
+                        <td data-label="Tema">Reconocimiento y Evaluación del Paciente Crítico
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Identificar signos vitales críticos y evaluar el estado del paciente rápidamente.</li>
+                                        <li>Aplicar escalas de evaluación estándar en UCI.</li>
+                                        <li>Priorizar intervenciones basadas en la evaluación inicial.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-fccs">FCCS</span></td>
+                    </tr>
+                    <tr data-resident="Katherine Nicolle Alfaro López" class="scroll-margin" tabindex="0">
+                        <td data-label="Fecha">24/10/2025</td>
+                        <td data-label="Día">Viernes</td>
+                        <td data-label="Residente">Katherine Nicolle Alfaro López</td>
+                        <td data-label="Tutor">Dr. Manzanarez</td>
+                        <td data-label="Tema">Manejo de la Vía Aérea
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Demostrar técnicas de intubación y manejo de vía aérea difícil.</li>
+                                        <li>Reconocer complicaciones asociadas y su manejo.</li>
+                                        <li>Utilizar dispositivos de vía aérea en escenarios de emergencia.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-fccs">FCCS</span></td>
+                    </tr>
+                    <tr data-resident="Roque Luis Angel Alvarado Baldizón" class="scroll-margin" tabindex="0">
+                        <td data-label="Fecha">27/10/2025</td>
+                        <td data-label="Día">Lunes</td>
+                        <td data-label="Residente">Roque Luis Angel Alvarado Baldizón</td>
+                        <td data-label="Tutor">Dr. Mendoza</td>
+                        <td data-label="Tema">Reanimación Cardiopulmonar y Cerebral
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Aplicar protocolos de RCP avanzada según guías actuales.</li>
+                                        <li>Optimizar la protección cerebral post-paro cardiorrespiratorio.</li>
+                                        <li>Evaluar y manejar arritmias durante la reanimación.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-fccs">FCCS</span></td>
+                    </tr>
+                    <tr data-resident="Claudia Melissa Avila Rivera" class="scroll-margin" tabindex="0">
+                        <td data-label="Fecha">31/10/2025</td>
+                        <td data-label="Día">Viernes</td>
+                        <td data-label="Residente">Claudia Melissa Avila Rivera</td>
+                        <td data-label="Tutor">Dr. Espinoza</td>
+                        <td data-label="Tema">Diagnóstico y Manejo del Shock
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Clasificar tipos de shock y sus causas subyacentes.</li>
+                                        <li>Implementar terapias iniciales como fluidos y vasopresores.</li>
+                                        <li>Monitorear respuesta al tratamiento mediante parámetros hemodinámicos.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-fccs">FCCS</span></td>
+                    </tr>
+                    <tr data-resident="Jonathan Christopher Calvo Herrera" class="scroll-margin">
+                        <td data-label="Fecha">03/11/2025</td>
+                        <td data-label="Día">Lunes</td>
+                        <td data-label="Residente">Jonathan Christopher Calvo Herrera</td>
+                        <td data-label="Tutor">Dr. Delgado</td>
+                        <td data-label="Tema">Principios de Ultrasonido en UCI y Protocolo RUSH
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Realizar ecografías básicas en UCI para evaluación hemodinámica.</li>
+                                        <li>Aplicar el protocolo RUSH en pacientes con shock indiferenciado.</li>
+                                        <li>Interpretar hallazgos ultrasonográficos para guiar el manejo.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-pocus">POCUS</span></td>
+                    </tr>
+                    <tr data-resident="Javier de Jesús Chávez Funez" class="scroll-margin">
+                        <td data-label="Fecha">07/11/2025</td>
+                        <td data-label="Día">Viernes</td>
+                        <td data-label="Residente">Javier de Jesús Chávez Funez</td>
+                        <td data-label="Tutor">Dr. Vanegas</td>
+                        <td data-label="Tema">Diagnóstico y Manejo de la Insuficiencia Respiratoria Aguda
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Identificar causas de insuficiencia respiratoria aguda.</li>
+                                        <li>Iniciar soporte ventilatorio no invasivo o invasivo según sea necesario.</li>
+                                        <li>Monitorear y ajustar parámetros ventilatorios para optimizar la oxigenación.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-fccs">FCCS</span></td>
+                    </tr>
+                    <tr data-resident="Urania Valeska Gutiérrez Acevedo" class="scroll-margin">
+                        <td data-label="Fecha">10/11/2025</td>
+                        <td data-label="Día">Lunes</td>
+                        <td data-label="Residente">Urania Valeska Gutiérrez Acevedo</td>
+                        <td data-label="Tutor">Dr. López</td>
+                        <td data-label="Tema">Ventilación Mecánica I: Fundamentos y Modos
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Explicar modos ventilatorios básicos y sus indicaciones.</li>
+                                        <li>Configurar ventiladores para pacientes críticos.</li>
+                                        <li>Reconocer complicaciones asociadas a la ventilación mecánica.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-fccs">FCCS</span></td>
+                    </tr>
+                    <tr data-resident="Luis José Martinez Figueroa" class="scroll-margin">
+                        <td data-label="Fecha">14/11/2025</td>
+                        <td data-label="Día">Viernes</td>
+                        <td data-label="Residente">Luis José Martinez Figueroa</td>
+                        <td data-label="Tutor">Dr. Altamirano</td>
+                        <td data-label="Tema">Ultrasonido Pulmonar (Protocolo BLUE)
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Aplicar el protocolo BLUE para diagnóstico diferencial pulmonar.</li>
+                                        <li>Interpretar patrones ultrasonográficos en patologías respiratorias.</li>
+                                        <li>Integrar hallazgos con el manejo clínico.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-pocus">POCUS</span></td>
+                    </tr>
+                    <tr data-resident="Oscar Eduardo Obregón Córdoba" class="scroll-margin">
+                        <td data-label="Fecha">17/11/2025</td>
+                        <td data-label="Día">Lunes</td>
+                        <td data-label="Residente">Oscar Eduardo Obregón Córdoba</td>
+                        <td data-label="Tutor">Dr. Manzanarez</td>
+                        <td data-label="Tema">Ventilación Mecánica II: Monitoreo y Retiro
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Monitorear parámetros ventilatorios y curvas de presión-volumen.</li>
+                                        <li>Evaluar criterios para destete ventilatorio.</li>
+                                        <li>Manejar fallos en el retiro de la ventilación mecánica.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-fccs">FCCS</span></td>
+                    </tr>
+                    <tr data-resident="Julio Dagoberto Rivera Gutiérrez" class="scroll-margin">
+                        <td data-label="Fecha">21/11/2025</td>
+                        <td data-label="Día">Viernes</td>
+                        <td data-label="Residente">Julio Dagoberto Rivera Gutiérrez</td>
+                        <td data-label="Tutor">Dr. Mendoza</td>
+                        <td data-label="Tema">Monitoreo Hemodinámico y del Estado Ácido-Base
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Interpretar monitoreo invasivo y no invasivo hemodinámico.</li>
+                                        <li>Corregir alteraciones ácido-base en pacientes críticos.</li>
+                                        <li>Integrar datos para optimizar el soporte cardiovascular.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-fccs">FCCS</span></td>
+                    </tr>
+                    <tr data-resident="Mirla Rashell Rodríguez Brooks" class="scroll-margin">
+                        <td data-label="Fecha">24/11/2025</td>
+                        <td data-label="Día">Lunes</td>
+                        <td data-label="Residente">Mirla Rashell Rodríguez Brooks</td>
+                        <td data-label="Tutor">Dr. Espinoza</td>
+                        <td data-label="Tema">Ecocardiograma Enfocado (FOCUS) y Evaluación de VCI
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Realizar ecocardiografía enfocada para evaluar función cardíaca.</li>
+                                        <li>Evaluar la vena cava inferior para estimar volumen intravascular.</li>
+                                        <li>Utilizar hallazgos para guiar terapia de fluidos.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-pocus">POCUS</span></td>
+                    </tr>
+                    <tr data-resident="Josseling Pamela Ruiz Alfaro" class="scroll-margin">
+                        <td data-label="Fecha">28/11/2025</td>
+                        <td data-label="Día">Viernes</td>
+                        <td data-label="Residente">Josseling Pamela Ruiz Alfaro</td>
+                        <td data-label="Tutor">Dr. Delgado</td>
+                        <td data-label="Tema">Síndromes Coronarios Agudos en el Paciente Crítico
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Diagnosticar SCA en contexto de UCI.</li>
+                                        <li>Iniciar manejo farmacológico y de reperfusión.</li>
+                                        <li>Manejar complicaciones como shock cardiogénico.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-fccs">FCCS</span></td>
+                    </tr>
+                    <tr data-resident="Marbelia de los Ángeles Sarmiento" class="scroll-margin">
+                        <td data-label="Fecha">01/12/2025</td>
+                        <td data-label="Día">Lunes</td>
+                        <td data-label="Residente">Marbelia de los Ángeles Sarmiento</td>
+                        <td data-label="Tutor">Dr. Vanegas</td>
+                        <td data-label="Tema">Soporte Neurológico
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Evaluar y manejar alteraciones neurológicas en UCI.</li>
+                                        <li>Implementar monitoreo de presión intracraneal.</li>
+                                        <li>Prevenir lesiones secundarias en pacientes neurocríticos.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-fccs">FCCS</span></td>
+                    </tr>
+                    
+                    <!-- EXAMEN DE PRIMERA EVALUACIÓN -->
+                    <tr class="exam-row scroll-margin">
+                        <td data-label="Fecha">05/12/2025</td>
+                        <td data-label="Día">Viernes</td>
+                        <td data-label="Residente" colspan="3">📝 EXAMEN DE PRIMERA EVALUACIÓN</td>
+                        <td data-label="Módulo"><span class="tag tag-examen">Evaluación</span></td>
+                    </tr>
+
+                    <tr data-resident="Walter Josue Velásquez Lanuza" class="scroll-margin">
+                            <td data-label="Fecha">08/12/2025</td>
+                            <td data-label="Día">Lunes</td>
+                            <td data-label="Residente">Walter Josue Velásquez Lanuza</td>
+                            <td data-label="Tutor">Dr. López</td>
+                            <td data-label="Tema">Manejo Avanzado de Sepsis y Shock Séptico
+                                <details class="objectives-details">
+                                    <summary>Ver Objetivos</summary>
+                                    <div class="objectives">
+                                        <ul>
+                                            <li>Aplicar terapias avanzadas como vasopresores y esteroides.</li>
+                                            <li>Monitorear respuesta a tratamiento con biomarcadores.</li>
+                                            <li>Manejar complicaciones multiorgánicas en sepsis.</li>
+                                        </ul>
+                                    </div>
+                                </details>
+                            </td>
+                            <td data-label="Módulo"><span class="tag tag-avanzado">Avanzado</span></td>
+                    </tr>
+                    <tr data-resident="Kevin Alexander Aguilar Romero" class="scroll-margin">
+
+                    </tr>
+                    <tr data-resident="Katherine Nicolle Alfaro López" class="scroll-margin">
+                        <td data-label="Fecha">15/12/2025</td>
+                        <td data-label="Día">Lunes</td>
+                        <td data-label="Residente">Katherine Nicolle Alfaro López</td>
+                        <td data-label="Tutor">Dr. Manzanarez</td>
+                        <td data-label="Tema">Trastornos Electrolíticos y Metabólicos Graves
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Diagnosticar y corregir desequilibrios electrolíticos críticos.</li>
+                                        <li>Manejar acidosis y alcalosis metabólicas.</li>
+                                        <li>Prevenir complicaciones asociadas en pacientes en UCI.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-fccs">FCCS</span></td>
+                    </tr>
+                    <tr data-resident="Roque Luis Angel Alvarado Baldizón" class="scroll-margin">
+                        <td data-label="Fecha">19/12/2025</td>
+                        <td data-label="Día">Viernes</td>
+                        <td data-label="Residente">Roque Luis Angel Alvarado Baldizón</td>
+                        <td data-label="Tutor">Dr. Mendoza</td>
+                        <td data-label="Tema">Cetoacidosis Diabética y Estado Hiperosmolar en UCI
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Diferenciar CDA y EHH y sus desencadenantes.</li>
+                                        <li>Iniciar protocolo de tratamiento con insulina y fluidos.</li>
+                                        <li>Monitorear y prevenir complicaciones neurológicas.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-avanzado">Avanzado</span></td>
+                    </tr>
+
+                    <!-- RECESO DE FIN DE AÑO: 22 Dic - 4 Ene -->
+
+                    <tr data-resident="Claudia Melissa Avila Rivera" class="scroll-margin">
+                        <td data-label="Fecha">05/01/2026</td>
+                        <td data-label="Día">Lunes</td>
+                        <td data-label="Residente">Claudia Melissa Avila Rivera</td>
+                        <td data-label="Tutor">Dr. Espinoza</td>
+                        <td data-label="Tema">Soporte Renal Agudo y Terapias de Reemplazo Renal
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Identificar indicaciones para TRR en lesión renal aguda.</li>
+                                        <li>Seleccionar modalidades de diálisis en UCI.</li>
+                                        <li>Manejar complicaciones de las TRR.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-avanzado">Avanzado</span></td>
+                    </tr>
+                    <tr data-resident="Jonathan Christopher Calvo Herrera" class="scroll-margin">
+                        <td data-label="Fecha">09/01/2026</td>
+                        <td data-label="Día">Viernes</td>
+                        <td data-label="Residente">Jonathan Christopher Calvo Herrera</td>
+                        <td data-label="Tutor">Dr. Delgado</td>
+                        <td data-label="Tema">Sedoanalgesia, Delirio y Movilización Temprana
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Optimizar sedoanalgesia para minimizar delirium.</li>
+                                        <li>Implementar protocolos de movilización temprana.</li>
+                                        <li>Evaluar y manejar delirium en pacientes ventilados.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-avanzado">Avanzado</span></td>
+                    </tr>
+                    <tr data-resident="Javier de Jesús Chávez Funez" class="scroll-margin">
+                        <td data-label="Fecha">12/01/2026</td>
+                        <td data-label="Día">Lunes</td>
+                        <td data-label="Residente">Javier de Jesús Chávez Funez</td>
+                        <td data-label="Tutor">Dr. Vanegas</td>
+                        <td data-label="Tema">Ultrasonido para Accesos Vasculares Guiados
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Realizar inserción de catéteres centrales guiados por US.</li>
+                                        <li>Reducir complicaciones como punción arterial.</li>
+                                        <li>Verificar posición post-inserción con ultrasonido.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-pocus">POCUS</span></td>
+                    </tr>
+                    <tr data-resident="Urania Valeska Gutiérrez Acevedo" class="scroll-margin">
+                        <td data-label="Fecha">16/01/2026</td>
+                        <td data-label="Día">Viernes</td>
+                        <td data-label="Residente">Urania Valeska Gutiérrez Acevedo</td>
+                        <td data-label="Tutor">Dr. López</td>
+                        <td data-label="Tema">Nutrición en el Paciente Crítico
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Calcular requerimientos nutricionales en UCI.</li>
+                                        <li>Seleccionar rutas de nutrición enteral vs. parenteral.</li>
+                                        <li>Monitorear tolerancia y complicaciones nutricionales.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-avanzado">Avanzado</span></td>
+                    </tr>
+                    <tr data-resident="Luis José Martinez Figueroa" class="scroll-margin">
+                        <td data-label="Fecha">19/01/2026</td>
+                        <td data-label="Día">Lunes</td>
+                        <td data-label="Residente">Luis José Martinez Figueroa</td>
+                        <td data-label="Tutor">Dr. Altamirano</td>
+                        <td data-label="Tema">Soporte Básico en Trauma y Quemaduras
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Aplicar ABCDE en pacientes con trauma.</li>
+                                        <li>Manejar quemaduras iniciales y calcular superficie afectada.</li>
+                                        <li>Prevenir infecciones y manejar dolor en quemados.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-fccs">FCCS</span></td>
+                    </tr>
+                    <tr data-resident="Oscar Eduardo Obregón Córdoba" class="scroll-margin">
+                        <td data-label="Fecha">23/01/2026</td>
+                        <td data-label="Día">Viernes</td>
+                        <td data-label="Residente">Oscar Eduardo Obregón Córdoba</td>
+                        <td data-label="Tutor">Dr. Manzanarez</td>
+                        <td data-label="Tema">Cuidados Críticos en el Embarazo
+                            <details class="objectives-details">
+                                <summary>Ver Objetivos</summary>
+                                <div class="objectives">
+                                    <ul>
+                                        <li>Reconocer emergencias obstétricas en UCI.</li>
+                                        <li>Manejar preeclampsia y hemorragia postparto.</li>
+                                        <li>Considerar fisiología materna y fetal en el tratamiento.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </td>
+                        <td data-label="Módulo"><span class="tag tag-fccs">FCCS</span></td>
+
+                </tbody>
+            </table>
+
+            <div class="exam-card">
+                 <h2><span role="img" aria-label="Graduación">🎓</span> Examen Final</h2>
+                 <p>Lunes, 26 de Enero de 2026</p>
+            </div>
+
+            <section class="summary-section">
+                <h2>Asignaciones por Residente</h2>
+                <div class="summary-grid">
+                    <div>
+                        <h3>Residentes con 2 clases</h3>
+                        <ul class="summary-list" id="list-2-classes" role="list">
+                           <li role="button" tabindex="0" data-resident-name="Walter Josue Velásquez Lanuza">Velásquez Lanuza, Walter Josue</li>
+                            <li role="button" tabindex="0" data-resident-name="Katherine Nicolle Alfaro López">Alfaro López, Katherine Nicolle</li>
+                            <li role="button" tabindex="0" data-resident-name="Roque Luis Angel Alvarado Baldizón">Alvarado Baldizón, Roque Luis Angel</li>
+                            <li role="button" tabindex="0" data-resident-name="Claudia Melissa Avila Rivera">Avila Rivera, Claudia Melissa</li>
+                            <li role="button" tabindex="0" data-resident-name="Jonathan Christopher Calvo Herrera">Calvo Herrera, Jonathan Christopher</li>
+                            <li role="button" tabindex="0" data-resident-name="Javier de Jesús Chávez Funez">Chávez Funez, Javier de Jesús</li>
+                            <li role="button" tabindex="0" data-resident-name="Urania Valeska Gutiérrez Acevedo">Gutiérrez Acevedo, Urania Valeska</li>
+                            <li role="button" tabindex="0" data-resident-name="Luis José Martinez Figueroa">Martinez Figueroa, Luis José</li>
+                            <li role="button" tabindex="0" data-resident-name="Oscar Eduardo Obregón Córdoba">Obregón Córdoba, Oscar Eduardo</li>
+                            <li role="button" tabindex="0" data-resident-name="Julio Dagoberto Rivera Gutiérrez">Rivera Gutiérrez, Julio Dagoberto</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Residentes con 1 clase</h3>
+                        <ul class="summary-list" id="list-1-class" role="list">
+                           <li role="button" tabindex="0" data-resident-name="Kevin Alexander Aguilar Romero">Aguilar Romero, Kevin Alexander</li>
+                            <li role="button" tabindex="0" data-resident-name="Mirla Rashell Rodríguez Brooks">Rodríguez Brooks, Mirla Rashell</li>
+                            <li role="button" tabindex="0" data-resident-name="Josseling Pamela Ruiz Alfaro">Ruiz Alfaro, Josseling Pamela</li>
+                            <li role="button" tabindex="0" data-resident-name="Marbelia de los Ángeles Sarmiento">Sarmiento, Marbelia de los Ángeles</li>
+                            <li role="button" tabindex="0" data-resident-name="Walter Josue Velásquez Lanuza">Velásquez Lanuza, Walter Josue</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        <main>
+            <table class="schedule-table" role="table" aria-label="Cronograma de clases">
+                <caption style="text-align:left; padding:10px 15px; color:#51626d">Cronograma oficial de sesiones y evaluaciones de UCI.</caption>
+
+    <script>
+        // Delegación de eventos optimizada y accesible
+        document.addEventListener('DOMContentLoaded', function() {
+            let lastHighlighted = null;
+            const summarySection = document.querySelector('.summary-section');
+            if (!summarySection) return;
+
+            const triggerHighlight = (target) => {
+                const residentName = target.getAttribute('data-resident-name');
+                if (!residentName) return;
+                const rowsToHighlight = document.querySelectorAll(`tr[data-resident="${residentName}"]`);
+
+                // Limpiar resaltados previos si es diferente residente
+                if (lastHighlighted && lastHighlighted !== residentName) {
+                    document.querySelectorAll('.highlight').forEach(row => row.classList.remove('highlight'));
+                }
+
+                // Alternar resaltado
+                rowsToHighlight.forEach(row => row.classList.toggle('highlight'));
+
+                // Scroll suave a la primera fila resaltada
+                if (rowsToHighlight.length > 0 && rowsToHighlight[0].classList.contains('highlight')) {
+                    lastHighlighted = residentName;
+                    rowsToHighlight[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    lastHighlighted = null;
+                }
+            };
+
+            // Click con ratón
+            summarySection.addEventListener('click', function(e) {
+                if (e.target.matches('.summary-list li')) {
+                    triggerHighlight(e.target);
+                }
+            });
+
+            // Teclado: Enter/Espacio
+            summarySection.addEventListener('keydown', function(e) {
+                if (e.target.matches('.summary-list li') && (e.key === 'Enter' || e.key === ' ')) {
+                    e.preventDefault();
+                    triggerHighlight(e.target);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
