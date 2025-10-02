@@ -757,6 +757,27 @@
             .schedule-table tbody tr td .objectives-details summary {
                 color: #ffffff !important;
             }
+            /* Asegurar legibilidad del contenido de objetivos en móvil (modo claro) */
+            .schedule-table tbody tr td .objectives-details .objectives {
+                background: #ffffff !important;
+                color: #1a1a1a !important;
+                border-color: #d1d5db !important;
+            }
+            .schedule-table tbody tr td .objectives-details .objectives :where(li, p, ul, ol) {
+                color: #1a1a1a !important;
+            }
+        }
+
+        /* Legibilidad de objetivos en móvil (modo oscuro) */
+        @media (max-width: 768px) and (prefers-color-scheme: dark) {
+            .schedule-table tbody tr td .objectives-details .objectives {
+                background: #0b1220 !important;
+                color: #e5e7eb !important;
+                border-color: #1f2937 !important;
+            }
+            .schedule-table tbody tr td .objectives-details .objectives :where(li, p, ul, ol) {
+                color: #e5e7eb !important;
+            }
         }
     </style>
 </head>
