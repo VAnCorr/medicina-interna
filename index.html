@@ -6,7 +6,10 @@
     <meta name="description" content="Cronograma de clases para residentes de UCI, octubre 2025 - enero 2026">
     <meta name="color-scheme" content="light dark">
     <title>Cronograma de Clases UCI</title>
+    <link rel="preload" as="image" href="./assets/facultad-ciencias-medicas.png">
     <style>
+        /* Mobile text rendering normalization */
+        html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
         /* === Variables CSS Organizadas === */
         :root {
             /* Colores Principales */
@@ -53,6 +56,8 @@
             /* Base font a bit larger for small screens to improve legibility */
             font-size: clamp(16px, 0.95rem + 0.25vw, 18px);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased; /* crisper text on WebKit */
+            -moz-osx-font-smoothing: grayscale;  /* crisper text on macOS */
         }
         .container { max-width: 1100px; margin: auto; overflow: hidden; }
 
@@ -598,9 +603,12 @@
             text-align: center;
             isolation: isolate; /* ensure overlays stack correctly */
             /* Background image with dual overlays (dark + brand gradient) */
+            /* Fallback color in case image fails */
+            background-color: var(--azul-sereno);
             background-image:
                 linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                linear-gradient(135deg, color-mix(in srgb, var(--azul-sereno) 55%, transparent), color-mix(in srgb, var(--verde-menta) 50%, transparent)),
+                /* Replaced color-mix() with broad-compatible rgba values */
+                linear-gradient(135deg, rgba(174,198,207,0.55), rgba(180,226,214,0.50)),
                 url('./assets/facultad-ciencias-medicas.png');
             background-size: cover, cover, cover;
             background-position: center center, center center, center center;
@@ -650,12 +658,12 @@
                 min-height: 300px; /* explicit guarantee on small screens */
                 /* Stronger overlay on small screens for better text contrast */
                 background-image:
-                    linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.65)),
-                    linear-gradient(135deg, color-mix(in srgb, var(--azul-sereno) 55%, transparent), color-mix(in srgb, var(--verde-menta) 50%, transparent)),
+                    linear-gradient(180deg, rgba(0,0,0,0.70), rgba(0,0,0,0.65)),
+                    linear-gradient(135deg, rgba(174,198,207,0.55), rgba(180,226,214,0.50)),
                     url('./assets/facultad-ciencias-medicas.png');
             }
-            .hero-title { text-wrap: balance; }
-            .hero-subtitle { text-wrap: balance; }
+            .hero-title { text-wrap: balance; text-shadow: none; color: #ffffff; }
+            .hero-subtitle { text-wrap: balance; text-shadow: none; color: #ffffff; opacity: 1; }
             /* Mejor legibilidad en tarjetas del cronograma en móvil */
             .schedule-table td { font-size: 1rem; line-height: 1.7; }
             .schedule-table td::before { color: #334155; font-size: 0.95rem; }
@@ -676,7 +684,8 @@
                 color: var(--carbon);
                 background-image:
                     linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-                    linear-gradient(135deg, color-mix(in srgb, var(--azul-sereno) 40%, transparent), color-mix(in srgb, var(--verde-menta) 40%, transparent)),
+                    /* Slightly lighter brand tint in dark mode */
+                    linear-gradient(135deg, rgba(174,198,207,0.40), rgba(180,226,214,0.40)),
                     url('./assets/facultad-ciencias-medicas.png');
             }
             .hero-title { color: #e5e7eb; }
