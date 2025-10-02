@@ -676,6 +676,39 @@
             .header p { font-size: 1.1em; }
         }
 
+        /* Alineación y legibilidad del toggle de objetivos en móvil */
+        @media (max-width: 768px) {
+            /* Para la celda de 'Tema de la Clase', alinear a la izquierda y mostrar etiqueta arriba */
+            .schedule-table td[data-label="Tema de la Clase"] {
+                text-align: left !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+            .schedule-table td[data-label="Tema de la Clase"]::before {
+                position: static !important;
+                display: block !important;
+                width: auto !important;
+                padding: 0 0 6px 0 !important;
+                white-space: normal !important;
+                text-align: left !important;
+                font-weight: 700 !important;
+                color: #2d3748 !important;
+            }
+            /* Que el contenido textual y el toggle queden alineados a la izquierda */
+            .schedule-table td[data-label="Tema de la Clase"] * {
+                text-align: left !important;
+            }
+            .schedule-table td[data-label="Tema de la Clase"] .objectives-details summary {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                margin-top: 8px;
+            }
+            .schedule-table td[data-label="Tema de la Clase"] .objectives-details .objectives {
+                margin-top: 8px;
+            }
+        }
+
         /* Asegurar texto opaco y oscuro en tarjetas (modo claro, móvil) */
         @media (max-width: 768px) and (prefers-color-scheme: light) {
             /* El contenido de las celdas debe verse nítido y sin transparencia */
